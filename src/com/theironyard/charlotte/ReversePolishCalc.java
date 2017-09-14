@@ -37,15 +37,29 @@ public class ReversePolishCalc {
             // we just encountered an operator
             if (num != null) {
                 push(num);
-            } else {
-                if (currentToken.equals("+")) {
+            } else if (currentToken.equals("+")) {
                     double value1 = pop();
                     double value2 = pop();
 
                     push(value2 + value1);
                 }
+                else if (currentToken.equals("*")) {
+                        double value1 = pop();
+                        double value2 = pop();
 
-                // TODO: implement the rest of the operators
+                        push(value2 * value1);
+                    } else if (currentToken.equals("/")) {
+                            double value1 = pop();
+                            double value2 = pop();
+
+                            push(value2 / value1);
+                        } else {
+                                double value1 = pop();
+                                double value2 = pop();
+
+                                push(value2 - value1);
+
+                            // TODO: implement the rest of the operators
             }
         }
 
@@ -56,6 +70,10 @@ public class ReversePolishCalc {
     private void push(String number) {
         // push on the stack
         // TODO: write this code that pushes onto the stack
+        stack[stackTop] = number;
+
+        stackTop++;
+
     }
 
     private void push(double d) {

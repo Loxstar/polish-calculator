@@ -9,19 +9,19 @@ public class Main {
     public static void main(String[] args) {
         ReversePolishCalc rpc = new ReversePolishCalc();
 
-        String rpnExpression = "2.5,4.8,+";
+        String rpcExpression = "2.5,4.8,+";
         double expectedResult = 7.3;
-        double actualResult = rpc.calculate(rpnExpression);
-        checkResult(rpnExpression, expectedResult, actualResult);
+        double actualResult = rpc.calculate(rpcExpression);
+        checkResult(rpcExpression, expectedResult, actualResult);
 
         // Write tests for the other operators (-, *, /)
 
         // Uncomment this test which has many operators
-//        rpnExpression = "5,1,2,+,4,*,+,3,-";
-//        expectedResult = 14.0;
-//        actualResult = rpn.calculate(rpnExpression);
-//        checkResult(rpnExpression, expectedResult, actualResult);
-    }
+        rpcExpression = "5,1,2,+,4,*,+,3,-";
+        expectedResult = 14.0;
+        actualResult = rpc.calculate(rpcExpression);
+        checkResult(rpcExpression, expectedResult, actualResult);
+   }
 
     private static void checkResult(String expression, double expected, double actual) {
         if (expected == actual) {
